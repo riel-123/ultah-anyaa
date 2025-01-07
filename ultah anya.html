@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Romantic Birthday Greeting</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #9b59b6, #8e44ad, #6a1b9a, #7b1fa2); /* Purple gradient */
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            position: relative;
+            width: 300px;
+            height: 200px;
+        }
+        .container::before, .container::after {
+            content: '';
+            position: absolute;
+            background: inherit;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .container::before {
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            transform: rotate(45deg);
+            top: -10%;
+            left: -10%;
+        }
+        .container::after {
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            transform: rotate(-45deg);
+            bottom: -10%;
+            right: -10%;
+        }
+        h1 {
+            font-size: 1.5rem;
+            color: #8e44ad; /* Purple text */
+            margin: 0;
+        }
+        .button-group {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1rem;
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #9b59b6; /* Purple button */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #8e44ad; /* Darker purple on hover */
+        }
+        .hidden {
+            display: none;
+        }
+
+        .birthdayGreeting {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            padding: 50px 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
+            flex-direction: column;
+        }
+
+        .birthdayGreeting h2 {
+            color: white;
+            font-size: 2rem;
+            flex: 1;
+            margin-bottom: 20px;
+        }
+
+        .birthdayGreeting p {
+            font-size: 1.2rem;
+            color: white;
+            margin-top: 10px;
+            flex: 2;
+            line-height: 1.6;
+        }
+
+        .birthdayGreeting img.birthdayImage {
+            max-width: 40%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .birthdayGreetingPageButton {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #9b59b6;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .birthdayGreetingPageButton:hover {
+            background-color: #8e44ad;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="introContainer">
+        <h1>Ada sesuatu nih</h1>
+        <div class="button-group">
+            <button id="startButton">Mau tau?, klik tombol ini dongg</button>
+        </div>
+    </div>
+
+    <div class="container hidden" id="kepoinContainer">
+        <h1>KEPO YAA</h1>
+        <div class="button-group">
+            <button id="nextButton">KEPO BANGETTT!!!</button>
+        </div>
+    </div>
+
+    <div class="container hidden" id="mainContainer">
+        <h1>Kamu sayang aku ga?</h1>
+        <div class="button-group">
+            <button id="yesButton">Ya</button>
+            <button id="noButton">Tidak</button>
+        </div>
+    </div>
+
+    <div class="container hidden" id="followUp">
+        <h1>Sayang banget atau sayang aja?</h1>
+        <div class="button-group">
+            <button id="loveMuchButton">Sayang banget</button>
+            <button id="loveLittleButton">Sayang aja</button>
+        </div>
+    </div>
+
+    <div class="hidden" id="birthdayGreetingPage">
+        <div class="birthdayGreeting">
+            <h2>Selamat Ulang Tahun, Sayang!</h2>
+            <p>Hari ini adalah hari spesialmu, dan aku ingin menjadi bagian dari kebahagiaanmu. Terima kasih sudah menjadi orang yang luar biasa, yang selalu membuat hari-hariku lebih cerah. Semoga di tahun ini, segala harapanmu tercapai dan kita bisa terus berbagi kebahagiaan bersama. Aku sayang banget sama kamu dan tak sabar untuk merayakan banyak momen indah bersama!</p>
+            <img src="foto anya.jpg" alt="Birthday Image" class="birthdayImage">
+        </div>
+        <button class="birthdayGreetingPageButton">
+            <a href="flower.html" style="color: rgb(255, 255, 255); text-decoration: none;">KLIK INI!!!</a>
+        </button>
+    </div>
+
+    <script>
+        document.getElementById('startButton').addEventListener('click', function() {
+            document.getElementById('introContainer').classList.add('hidden');
+            document.getElementById('kepoinContainer').classList.remove('hidden');
+        });
+
+        document.getElementById('nextButton').addEventListener('click', function() {
+            document.getElementById('kepoinContainer').classList.add('hidden');
+            document.getElementById('mainContainer').classList.remove('hidden');
+        });
+
+        document.getElementById('yesButton').addEventListener('click', function() {
+            document.getElementById('mainContainer').classList.add('hidden');
+            document.getElementById('followUp').classList.remove('hidden');
+        });
+
+        document.getElementById('noButton').addEventListener('click', function() {
+            this.disabled = true;
+        });
+
+        document.getElementById('loveMuchButton').addEventListener('click', function() {
+            document.getElementById('followUp').classList.add('hidden');
+            document.getElementById('birthdayGreetingPage').classList.remove('hidden');
+        });
+
+        document.getElementById('loveLittleButton').addEventListener('click', function() {
+            alert('GABOLEHH PENCETT ITUU WLEEE');
+        });
+    </script>
+</body>
+</html>
